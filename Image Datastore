@@ -1,0 +1,63 @@
+We can use the imageDatastore function to create a datastore in MATLAB, specifying the folder or file names as the input. 
+We can use wildcard characters such as * to specify multiple files.
+
+ds = imageDatastore('foo*.png')
+
+This will create a datastore to all the PNG files in the current folder with names starting with foo.
+
+Create a datastore named imds that refers to the image files in the current folder named file01.jpg through file12.jpg. 
+(Note these are the only image files in this folder with names of the form filenn.jpg.)
+
+The properties of the datastore contain the meta information about the data files
+Use the Files property of the datastore imds to extract the file names of the images. Store the result in a variable called fname.
+
+We can manually import data from a datastore using the read, readimage, and readall functions - read imports images one at a time,
+in order; readimage imports a single specific image; readall imports all the images into a single cell array (with each image in a
+separate cell).
+
+I = readimage(ds,n)
+
+This imports the nth image of the datastore ds into an array called I.
+
+Use the readimage function to import the image in file07.jpg (the 7th file in the datastore). 
+Store the imported image in a variable called img.
+
+We can use an image datastore in place of an individual image in CNN functions such as classify.
+
+preds = classify(net,ds)
+
+The result will be an array of predicted classes, one for each image in the datastore.
+
+Use AlexNet (loaded as the variable net) to classify the contents of all the images in the data set. Store the results in a
+variable called preds.
+
+Note that the classify function will be running 12 images through AlexNet. It may take a few seconds to execute.
+
+******************************************************************************************************************************************
+INPUT CODE:
+******************************************************************************************************************************************
+
+
+ls *.jpg            %This code displays the images in the current folder and imports AlexNet.%
+net = alexnet;
+
+imds = imageDatastore('file*.jpg')          % Datastore created %
+
+fname = imds.Files                          % File names extracted %
+
+img = readimage(imds,7)                     % Read an image %
+
+preds = classify(net,imds)                  % Classify images %
+
+******************************************************************************************************************************************
+CONCLUSION:
+Remember that you can obtain the prediction scores for all 1000 categories as a second output from classify. 
+In this case, the scores will be a 12-by-1000 matrix. Each row represents the prediction scores for each image. 
+Try obtaining the scores and using them to investigate the classifications further.
+
+For example, which predictions were the most “confident”? Find the maximum element in each row to see how confident the 
+classification was for each image:
+max(scores,[],2)
+
+You can also create a bar chart for each row in the prediction scores using the techniques from the previous activity.
+
