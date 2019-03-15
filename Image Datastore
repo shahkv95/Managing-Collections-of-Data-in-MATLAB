@@ -51,6 +51,7 @@ preds = classify(net,imds)                  % Classify images %
 
 ******************************************************************************************************************************************
 CONCLUSION:
+
 Remember that you can obtain the prediction scores for all 1000 categories as a second output from classify. 
 In this case, the scores will be a 12-by-1000 matrix. Each row represents the prediction scores for each image. 
 Try obtaining the scores and using them to investigate the classifications further.
