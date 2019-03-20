@@ -1,7 +1,7 @@
 We can use the imageDatastore function to create a datastore in MATLAB, specifying the folder or file names as the input. 
 We can use wildcard characters such as * to specify multiple files.
 
-ds = imageDatastore('foo*.png')
+  ds = imageDatastore('foo*.png')
 
 This will create a datastore to all the PNG files in the current folder with names starting with foo.
 
@@ -15,7 +15,7 @@ We can manually import data from a datastore using the read, readimage, and read
 in order; readimage imports a single specific image; readall imports all the images into a single cell array (with each image in a
 separate cell).
 
-I = readimage(ds,n)
+  I = readimage(ds,n)
 
 This imports the nth image of the datastore ds into an array called I.
 
@@ -24,7 +24,7 @@ Store the imported image in a variable called img.
 
 We can use an image datastore in place of an individual image in CNN functions such as classify.
 
-preds = classify(net,ds)
+  preds = classify(net,ds)
 
 The result will be an array of predicted classes, one for each image in the datastore.
 
