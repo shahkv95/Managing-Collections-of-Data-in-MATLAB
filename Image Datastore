@@ -53,6 +53,7 @@ img = readimage(imds,7)                     % Read an image %
 preds = classify(net,imds)                  % Classify images %
 
 ******************************************************************************************************************************************
+
 CONCLUSION:
 
 Remember that you can obtain the prediction scores for all 1000 categories as a second output from classify. 
