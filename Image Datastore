@@ -16,6 +16,7 @@ We can manually import data from a datastore using the read, readimage, and read
 in order; readimage imports a single specific image; readall imports all the images into a single cell array (with each image in a
 separate cell).
 
+
   I = readimage(ds,n)
 
 This imports the nth image of the datastore ds into an array called I.
