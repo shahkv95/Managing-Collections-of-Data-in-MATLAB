@@ -11,6 +11,7 @@ Create a datastore named imds that refers to the image files in the current fold
 The properties of the datastore contain the meta information about the data files
 Use the Files property of the datastore imds to extract the file names of the images. Store the result in a variable called fname.
 
+
 We can manually import data from a datastore using the read, readimage, and readall functions - read imports images one at a time,
 in order; readimage imports a single specific image; readall imports all the images into a single cell array (with each image in a
 separate cell).
