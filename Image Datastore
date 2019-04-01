@@ -33,6 +33,7 @@ The result will be an array of predicted classes, one for each image in the data
 Use AlexNet (loaded as the variable net) to classify the contents of all the images in the data set. Store the results in a
 variable called preds.
 
+
 Note that the classify function will be running 12 images through AlexNet. It may take a few seconds to execute.
 
 
