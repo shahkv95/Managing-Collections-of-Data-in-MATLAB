@@ -61,6 +61,7 @@ Remember that you can obtain the prediction scores for all 1000 categories as a 
 In this case, the scores will be a 12-by-1000 matrix. Each row represents the prediction scores for each image. 
 Try obtaining the scores and using them to investigate the classifications further.
 
+
 For example, which predictions were the most “confident”? Find the maximum element in each row to see how confident the 
 classification was for each image:
 max(scores,[],2)
