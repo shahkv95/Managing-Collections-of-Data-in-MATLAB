@@ -60,5 +60,6 @@ For example, which predictions were the most “confident”? Find the maximum e
 classification was for each image:
 max(scores,[],2)
 
+
 You can also create a bar chart for each row in the prediction scores using the techniques from the previous activity.
 
