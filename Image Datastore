@@ -5,7 +5,6 @@ We can use the imageDatastore function to create a datastore in MATLAB, specifyi
 
 
 
-
 We can use wildcard characters such as * to specify multiple files.
 
   ds = imageDatastore('foo*.png')
